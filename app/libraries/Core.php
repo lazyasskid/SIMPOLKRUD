@@ -11,7 +11,7 @@
         protected $params = [];
 
         public function __construct() {
-            $this->get_url();
+            $url = $this->get_url();
 
             // Look in controllers for first value
             if(file_exists('../app/controllers/' . ucwords($url[0]) . '.php')) {
