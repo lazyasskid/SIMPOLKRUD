@@ -9,7 +9,7 @@
         protected $currentController = 'Pages';
         protected $currentMethod = 'index';
         protected $params = [];
-        
+
         public function __construct() {
             $url = $this->get_url();
 
