@@ -11,5 +11,7 @@
     define('URL_ROOT', 'http://localhost/phpApp-crud');
     // Site Name
     define('SITE_NAME', 'SIMPOLKRUD');
+    // App Version
+    define('APP_VERSION', '1.0');
 
 
