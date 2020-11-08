@@ -1,3 +1,4 @@
+    </div>
     <!-- Custom JS -->
     <script src="<?php echo URL_ROOT; ?>/js/main.js"></script>
     <!-- Optional JavaScript; choose one of the two! -->
