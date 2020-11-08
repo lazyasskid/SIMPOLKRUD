@@ -14,8 +14,8 @@
 
         public function about() {
             $data = [
-                'title' => 'About Us',
-                'description' => 'This is a simple PHP-CRUD App.'
+                'title' => 'About',
+                'description' => 'This is a simple PHP-CRUD App + Twitter Bootstrap.'
             ];
             $this->view('pages/about', $data);
         }
