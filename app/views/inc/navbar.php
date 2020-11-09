@@ -7,20 +7,20 @@
 
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="<?php echo URL_ROOT; ?>">Home</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo URL_ROOT; ?>">HOME</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo URL_ROOT . '/pages/about'; ?>">About</a>
+                    <a class="nav-link" href="<?php echo URL_ROOT; ?>/pages/about">ABOUT</a>
                 </li>
             </ul>
 
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo URL_ROOT . '/users/register'; ?>">Register</a>
+                    <a class="nav-link" href="<?php echo URL_ROOT; ?>/users/register">Register</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo URL_ROOT . '/users/login'; ?>">Login</a>
+                    <a class="nav-link" href="<?php echo URL_ROOT; ?>/users/login">Login</a>
                 </li>
             </ul>
         </div>
