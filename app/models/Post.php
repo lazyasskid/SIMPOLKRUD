@@ -28,6 +28,22 @@
             }
         }
 
+        // Edit Post
+        public function editPost($data) {
+            // Query
+            $this->db->query('UPDATE posts SET title = :title, body = :body WHERE id = :id');
+            // Bind Values
+            $this->db->bind(':id', $data['id']);
+            $this->db->bind(':title', $data['title']);
+            $this->db->bind(':body', $data['body']);
+            // Execute
+            if($this->db->execute()) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
         // Get Post By ID
         public function getPostById($id) {
             // Query
@@ -36,5 +52,19 @@
             $this->db->bind(':id', $id);
 
             return $this->db->single();
+        }
+
+        // Delete Post By ID
+        public function deletePost($id) {
+            // Query
+            $this->db->query('DELETE FROM posts WHERE id = :id');
+            // Bind Values
+            $this->db->bind(':id', $id);
+            // Execute
+            if($this->db->execute()) {
+                return true;
+            } else {
+                return false;
+            }
         }
     }
