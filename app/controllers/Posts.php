@@ -49,7 +49,7 @@
                     //die('success');
                     // Validated
                     if($this->postModel->addPost($data)) {
-                        flash('post_added', 'Post Added!');
+                        flash('post_message', 'Post Added!');
                         redirect('posts/index');
                     } else {
                         die('Something went wrong.');
@@ -74,6 +74,7 @@
                 $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
                 // Init data
                 $data = [
+                    'id' => $id,
                     'title' => trim($_POST['title']),
                     'body' => trim($_POST['body']),
                     'user_id' => $_SESSION['user_id'],
@@ -94,8 +95,8 @@
                 if(empty($data['title_err']) && empty($data['body_err'])) {
                     //die('success');
                     // Validated
-                    if($this->postModel->addPost($data)) {
-                        flash('post_added', 'Post Added!');
+                    if($this->postModel->editPost($data)) {
+                        flash('post_message', 'Post Updated!');
                         redirect('posts/index');
                     } else {
                         die('Something went wrong.');
@@ -129,5 +130,19 @@
                 'user' => $user
             ];
             $this->view('posts/show', $data);
+        }
+
+        // Delete Post
+        public function delete($id) {
+            if($_SERVER['REQUEST_METHOD'] == 'POST') {
+                if($this->postModel->deletePost($id)) {
+                    flash('post_message', 'Post Deleted!', 'alert alert-danger');
+                    redirect('posts/index');
+                } else {
+                   die('Something went wrong.');
+                }
+            } else {
+                redirect('posts/index');
+            }
         }
     }
