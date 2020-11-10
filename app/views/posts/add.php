@@ -2,7 +2,7 @@
     <a href="<?php echo URL_ROOT; ?>/posts/" class="btn btn-light"><i class="fa fa-backward"></i> Back</a>
     <div class="card card-body bg-light mt-5">
         <h2>Add Post</h2>
-        <p class="lead">Lorem ipsum dolor sit amet.</p>
+        <p class="lead">Create post below</p>
         <form action="<?php echo URL_ROOT; ?>/posts/add" method="post">
             <div class="form-group">
                 <label for="name">Title: <sup>*</sup></label>
