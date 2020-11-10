@@ -23,7 +23,7 @@
             if($_SERVER['REQUEST_METHOD'] == 'POST') {
                 // Sanitize POST array
                 $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-
+                // Init data
                 $data = [
                     'title' => trim($_POST['title']),
                     'body' => trim($_POST['body']),
@@ -38,13 +38,14 @@
 
                 // Validate Body
                 if(empty($data['body'])) {
-                    $data['body_err'] = 'Please enter text';
+                    $data['body_err'] = 'Please enter body text';
                 }
 
                 // Make sure no errors
                 if(empty($data['title_err']) && empty($data['body_err'])) {
+                    //die('success');
                     // Validated
-                    if($this->postModel->addPost()) {
+                    if($this->postModel->addPost($data)) {
                         flash('post_added', 'Post Added!');
                         redirect('posts/index');
                     } else {
