@@ -59,7 +59,7 @@
                     $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
                     // Register User
                     if($this->userModel->register($data)) {
-                        flash('register_success', 'You are registered. Please login.');
+                        flash('register_success', 'You are registered, please login.');
                         redirect('users/login');
                     } else {
                         die('Something went wrong!');
@@ -153,7 +153,7 @@
             $_SESSION['user_id'] = $user->id;
             $_SESSION['user_email'] = $user->email;
             $_SESSION['user_name'] = $user->name;
-            redirect('pages/index');
+            redirect('posts');
         }
 
         // Logout - destroy user session
@@ -164,14 +164,4 @@
             session_destroy();
             redirect('users/login');
         }
-
-        // Check if logged in
-        public function isLoggedIn() {
-            if(isset($_SESSION['user_id'])) {
-                return true;
-            } else {
-                return false;
-            }
-        }
-
     }
