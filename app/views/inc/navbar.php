@@ -8,10 +8,10 @@
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo URL_ROOT; ?>">HOME</a>
+                    <a class="nav-link lead" href="<?php echo URL_ROOT; ?>">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo URL_ROOT; ?>/pages/about">ABOUT</a>
+                    <a class="nav-link lead" href="<?php echo URL_ROOT; ?>/pages/about">About</a>
                 </li>
             </ul>
 
