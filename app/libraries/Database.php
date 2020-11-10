@@ -65,7 +65,7 @@
         }
 
         // Get result set as array of objects
-        public function result_set() {
+        public function resultSet() {
             $this->execute();
             return $this->stmt->fetchAll(PDO::FETCH_OBJ);
         }
@@ -77,7 +77,7 @@
         }
 
         // Get row count
-        public function row_count() {
+        public function rowCount() {
             return $this->stmt->rowCount();
         }
 
