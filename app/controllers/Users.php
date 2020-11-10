@@ -59,7 +59,7 @@
                     $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
                     // Register User
                     if($this->userModel->register($data)) {
-                        header('location: ' . URL_ROOT. '/users/login');
+                        redirect('users/login');
                     } else {
                         die('Something went wrong!');
                     }
