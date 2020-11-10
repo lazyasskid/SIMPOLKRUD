@@ -1,12 +1,12 @@
 <?php require_once APP_ROOT . '/views/inc/header.php'; ?>
-<a href="<?php echo URL_ROOT; ?>/posts/" class="btn btn-light"><i class="fa fa-backward"></i> Back</a>
+<a href="<?php echo URL_ROOT; ?>/posts" class="btn btn-light"><i class="fa fa-backward"></i> Back</a>
 <div class="card card-body bg-light mt-5">
     <h2>Edit Post</h2>
     <p class="lead">Edit post below</p>
-    <form action="<?php echo URL_ROOT; ?>/posts/edit" method="post">
+    <form action="<?php echo URL_ROOT; ?>/posts/edit/<?php echo $data['id']; ?>" method="post">
         <div class="form-group">
             <label for="name">Title: <sup>*</sup></label>
-            <input type="text" name='title' class="form-control form-control-lg <?php echo (!empty($data['title_err'])) ? 'is-invalid' : ''; ?> value="<?php echo $data['title']; ?>">
+            <input type="text" name="title" class="form-control form-control-lg <?php echo (!empty($data['title_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['title']; ?>">
             <span class="invalid-feedback"><?php echo $data['title_err']; ?></span>
         </div>
         <div class="form-group">
