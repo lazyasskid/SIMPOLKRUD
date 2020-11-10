@@ -12,7 +12,7 @@
             return $this->db->resultSet();
         }
 
-        // Add Posts
+        // Add Post
         public function addPost($data) {
             // Query
             $this->db->query('INSERT INTO posts (title, user_id, body) VALUES (:title, :user_id, :body)');
@@ -26,5 +26,15 @@
             } else {
                 return false;
             }
+        }
+
+        // Get Post By ID
+        public function getPostById($id) {
+            // Query
+            $this->db->query('SELECT * FROM posts WHERE id = :id');
+            // Bind Values
+            $this->db->bind(':id', $id);
+
+            return $this->db->single();
         }
     }
